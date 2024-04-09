@@ -7,7 +7,7 @@ with DAG(
     dag_id="dags_bash_operator",
     schedule="0 0 * * *",
     start_date=pendulum.datetime(2024, 4, 9, tz="Asia/Seaul"),
-    catchup=False,
+    catchup=False
     #dagrun_timeout=datetime.timedelta(minutes=60),
     #tags=["example", "example2"],
     #params={"example_key": "example_value"},
