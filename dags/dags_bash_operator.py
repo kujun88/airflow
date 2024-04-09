@@ -1,5 +1,4 @@
 from airflow.models.dag import DAG
-
 import pendulum
 from airflow.operators.bash import BashOperator
 
@@ -19,4 +18,4 @@ with DAG(
         bash_command="echo $HOSTNAME",
     )
 
-    BashOperator >> bash_t2
+    bash_t1 >> bash_t2
