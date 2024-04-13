@@ -6,8 +6,8 @@ import random
 
 with DAG(
     dag_id="dags_python_operator",
-    schedule="30 6 * * 6#1",
-    start_date=pendulum.datetime(2023, 4, 13, tz="Asia/Seoul"),
+    schedule="30 6 * * *",
+    start_date=pendulum.datetime(2023, 3, 1, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
     def select_fruit():
@@ -15,8 +15,8 @@ with DAG(
         rand_int = random.randint(0,3)
         print(fruit[rand_int])
 
-    py_ti = PythonOperator(
-        task_id = 'py_t1',
+    py_t1 = PythonOperator(
+        task_id='py_t1',
         python_callable=select_fruit
     )
 
