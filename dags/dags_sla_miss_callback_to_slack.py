@@ -7,7 +7,7 @@ from config.sla_miss_callback_to_slack import sla_miss_callback_to_slack
 
 with DAG(
     dag_id='dags_sla_miss_callback_to_slack',
-    start_date=pendulum.datetime(2023, 5, 1, tz='Asia/Seoul'),
+    start_date=pendulum.datetime(2024, 4, 20, tz='Asia/Seoul'),
     schedule='*/10 * * * *',
     catchup=False,
     sla_miss_callback=sla_miss_callback_to_slack
